@@ -1,0 +1,3 @@
+export const MESSAGE_LOADING = "MESSAGE_LOADING";
+export const SET_MESSAGE = "SET_MESSAGE";
+export const MESSAGE_ERROR = "MESSAGE_ERROR";
