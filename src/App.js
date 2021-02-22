@@ -23,6 +23,7 @@ function App() {
           <main className={classes.container}>
             <Switch>
               <Route exact path="/contact" component={Contact} />
+              <Route exact path="/" component={Contact} />
               <Route exact path="/message" component={Message} />
               <Route exact path="/user" component={User} />
               <Route exact path="/send" component={Send} />
