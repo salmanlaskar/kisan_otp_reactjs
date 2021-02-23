@@ -6,8 +6,6 @@ const useStyles = makeStyles((theme) => ({
   Input: {
     maxWidth: "330px",
     width: "94%",
-    // height: "56px",
-    fontFamily: "'Roboto', sans-serif",
     fontSize: "16px",
     fontWeight: "normal",
     fontStretch: "normal",
@@ -17,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#ffffff",
     borderRadius: "4px",
     margin: "1% 0 1% 5%",
-    // border: "solid 1px rgba(0, 0, 0, 0.12)",
+    border: "solid 1px rgba(0, 0, 0, 0.12)",
   },
 }));
 const ContactScreen = ({ history }) => {
@@ -81,17 +79,12 @@ const ContactScreen = ({ history }) => {
     <div style={styles.container}>
       {loading && (
         <div
-          style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          style={styles.progress}
         >
           <CircularProgress />
         </div>
       )}
-      <div style={{ width: "100%", marginTop: "20px" }}>
+      <div style={{ width: "100%",display:'flex',justifyContent:'center' }}>
         <TextField
           type="text"
           value={search}
@@ -142,6 +135,12 @@ const styles = {
     flex: 1,
     backgroundColor: "#ffffff",
     paddingVertical: 14,
+  },
+  progress:{
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   searchInput: {
     flexDirection: "row",

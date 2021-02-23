@@ -43,8 +43,7 @@ const AppMenuItem = (props) => {
       {/* Display an icon if any */}
       {!!Icon && (
         <ListItemIcon>
-          <img
-            src={Icon}
+          <Icon
             className={classes.menuItemIcon}
             style={{ width: "24px", height: "24px" }}
             alt={name}
@@ -54,7 +53,7 @@ const AppMenuItem = (props) => {
       <ListItemText
         primary={name}
         inset={!Icon}
-        primaryTypographyProps={{ style: { fontWeight: 500, fontSize: 14 } }}
+        primaryTypographyProps={{ style: { fontWeight: 500, fontSize: 16,fontFamily:"Poppins-SemiBold" } }}
       />
       {/* Display the expand menu if the item has children */}
       {isExpandable && !open && <IconExpandMore />}

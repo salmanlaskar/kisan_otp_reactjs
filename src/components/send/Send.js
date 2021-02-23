@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: "normal",
     backgroundColor: "#ffffff",
     borderRadius: "4px",
-    margin: "1% 0 1% 15px",
+    margin: "1% 0 1% 0",
     // border: "solid 1px rgba(0, 0, 0, 0.12)",
   },
 }));
@@ -70,7 +70,7 @@ const SendMessage = ({ history }) => {
       )}
       <div
         style={{
-          width: "120px",
+          width: "350px",
           height: "40px",
           display: "flex",
           flexDirection: "column",
@@ -83,7 +83,7 @@ const SendMessage = ({ history }) => {
       >
         <p style={styles.text}>Back</p>
       </div>
-      <div style={{ marginLeft: "20px" }}>
+      <div style={{ marginLeft: "12px" }}>
         <div style={{ display: "flex", marginTop: "20px" }}>
           <p style={{ ...styles.headerText, ...{ minWidth: "150px" } }}>
             To :{" "}
@@ -116,7 +116,7 @@ const SendMessage = ({ history }) => {
             ({data.phoneNumber})
           </p>
         </div>
-        <div style={{ display: "flex", marginTop: 40 }}>
+        <div style={{ display: "flex", marginTop: '40px' }}>
           <p style={{ ...styles.headerText, ...{ minWidth: "150px" } }}>
             Hi. Your OTP is:{" "}
           </p>
@@ -178,7 +178,9 @@ const SendMessage = ({ history }) => {
 };
 const styles = {
   container: {
-    flex: 1,
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center',
     backgroundColor: "#ffffff",
     paddingTop: "14px",
   },
@@ -221,7 +223,7 @@ const styles = {
   text: {
     fontSize: "16px",
     color: "#ff9200",
-    textAlign: "center",
+    textAlign: "left",
     fontFamily: "Poppins-Medium",
   },
 };

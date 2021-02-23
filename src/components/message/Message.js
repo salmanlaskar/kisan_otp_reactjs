@@ -20,7 +20,7 @@ const MessageScreen = ({ message, getMessage }) => {
   ];
   const renderPost = (post, index) => {
     return (
-      <div>
+      <div key={index}>
         {/* here the logic is for showing the header for date, same date's message will together
         Also maintaining Today or not*/}
         {!index ||
@@ -49,10 +49,10 @@ const MessageScreen = ({ message, getMessage }) => {
           </div>
         ) : null}
         <div style={styles.chat}>
-          <p style={{ ...styles.mes, ...{ fontFamily: "Poppins-Medium" } }}>
+          <p style={styles.mes}>
             {post.firstName + " " + post.lastName}
           </p>
-          <p style={{ ...styles.mes, ...{ fontSize: 12 } }}>
+          <p style={{ ...styles.mes, ...{ fontSize: '14px',fontFamily:"Poppins-Regular" } }}>
             ({post.phoneNumber})
           </p>
           <p style={styles.mes}>{post.message}</p>
@@ -71,13 +71,7 @@ const MessageScreen = ({ message, getMessage }) => {
     <div style={styles.header}>
       {message.loading && (
         <div
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          style={styles.progress}
         >
           <CircularProgress />
         </div>
@@ -92,6 +86,13 @@ const styles = {
     minHeight: "100%",
     display: "flex",
     flexDirection: "column",
+  },
+  progress:{
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
   },
   date: {
     fontSize: "20px",
@@ -114,8 +115,6 @@ const styles = {
     padding: "10px 10px 10px 10px",
   },
   chat: {
-    display: "flex",
-    flexDirection: "column",
     backgroundColor: "#E4E4E7",
     marginLeft: "16px",
     marginBottom: "12px",
@@ -123,21 +122,19 @@ const styles = {
     borderBottomRightRadius: "5px",
     borderTopRightRadius: "15px",
     borderBottomLeftRadius: "15px",
-    alignSelf: "flex-start",
-    paddingLeft: "10px",
-    paddingRight: "10px",
+    paddingLeft: "13px",
+    paddingRight: "13px",
     paddingTop: "9px",
     paddingBottom: "4px",
-    maxWidth: "500px",
-    minWidth: "250px",
+    width: "74%",
+    maxWidth:'900px'
   },
   mes: {
-    display: "flex",
-    flexDirection: "column",
     color: "#4F4F4F",
-    fontSize: "12px",
+    fontSize: "15px",
     fontFamily: "Poppins-Regular",
     marginLeft: "24px",
+    margin:'4px 0px 2px 0px'
   },
   time: {
     fontSize: "10px",

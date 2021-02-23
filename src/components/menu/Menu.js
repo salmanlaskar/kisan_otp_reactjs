@@ -49,6 +49,7 @@ const Menu = (props) => {
         }}
         onClose={() => setOpen(false)}
       >
+        <div style={{height:'20px'}}/>
         <AppMenu
           setOpen1={() => {
             setOpen(!open);
